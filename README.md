@@ -2,7 +2,7 @@
 
 Responsive bookshop e-commerce frontend prototype for a human-computer interaction project.
 
-**Portfolio:** [Carl Renz Colico](https://github.com/renzkie8) · **Year:** Year 3
+**Portfolio:** [Carl Renz Colico](https://github.com/renzkie8) · **Year / Section:** Year 3 — BSCS 3-A
 
 ## Methodology
 
