@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saved Items - Pandaday Bookshop</title>
+  <meta name="description"
+    content="View and manage your saved items, wishlists, and favorite products at Pandaday Bookshop.">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+
+<body>
+  <header class="page-header-bar">
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between">
+        <a href="dashboard.html" class="back-btn"><i class="bi bi-arrow-left"></i> Back</a>
+        <span class="fw-bold text-white">Saved Items</span>
+        <span style="width:60px;"></span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container my-4">
+
+    <!-- Summary Strip -->
+    <div class="saved-summary-strip mb-4">
+      <div class="d-flex align-items-center gap-3 flex-wrap">
+        <div class="saved-stat">
+          <i class="bi bi-heart-fill"></i>
+          <div>
+            <span class="saved-stat-number" id="total-count">8</span>
+            <span class="saved-stat-label">Saved Items</span>
+          </div>
+        </div>
+        <div class="saved-stat">
+          <i class="bi bi-collection-fill"></i>
+          <div>
+            <span class="saved-stat-number">3</span>
+            <span class="saved-stat-label">Lists</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Filter Tabs -->
+    <div class="history-tabs mb-4" role="tablist">
+      <button class="history-tab active" role="tab" onclick="filterList('all', this)" id="tab-all">All Items</button>
+      <button class="history-tab" role="tab" onclick="filterList('school', this)" id="tab-school">School
+        Supplies</button>
+      <button class="history-tab" role="tab" onclick="filterList('art', this)" id="tab-art">Art Supplies</button>
+      <button class="history-tab" role="tab" onclick="filterList('office', this)" id="tab-office">Office</button>
+    </div>
+
+    <!-- Saved Items Grid -->
+    <div class="row g-3" id="saved-items-grid">
+
+      <!-- Item 1 -->
+      <div class="col-6 col-md-4" data-list="school">
+        <div class="saved-item-card" id="saved-1">
+          <div class="saved-item-img">
+            <img src="../assets/images/intermediate_pad.png" class="saved-item-image" alt="Intermediate Pad">
+            <button class="saved-remove-btn" onclick="removeItem(this)" aria-label="Remove from saved"><i
+                class="bi bi-heart-fill"></i></button>
+          </div>
+          <div class="saved-item-body">
+            <p class="saved-item-name">Intermediate Pad</p>
+            <p class="saved-item-price">₱45.00</p>
+            <span class="saved-item-stock in-stock"><i class="bi bi-check-circle-fill me-1"></i>In Stock</span>
+            <button class="btn btn-pandayan btn-sm w-100 mt-2" onclick="addToCart(this)"><i
+                class="bi bi-cart-plus me-1"></i>Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="col-6 col-md-4" data-list="school">
+        <div class="saved-item-card" id="saved-2">
+          <div class="saved-item-img">
+            <img src="../assets/images/mongol_pencil.png" class="saved-item-image" alt="Mongol Pencil No. 2 Box">
+            <button class="saved-remove-btn" onclick="removeItem(this)" aria-label="Remove from saved"><i
+                class="bi bi-heart-fill"></i></button>
+          </div>
+          <div class="saved-item-body">
+            <p class="saved-item-name">Mongol Pencil No. 2 (Box)</p>
+            <p class="saved-item-price">₱120.00</p>
+            <span class="saved-item-stock in-stock"><i class="bi bi-check-circle-fill me-1"></i>In Stock</span>
+            <button class="btn btn-pandayan btn-sm w-100 mt-2" onclick="addToCart(this)"><i
+                class="bi bi-cart-plus me-1"></i>Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="col-6 col-md-4" data-list="art">
+        <div class="saved-item-card" id="saved-3">
+          <div class="saved-item-img">
+            <img src="../assets/images/watercolor_set.png" class="saved-item-image" alt="Faber-Castell Watercolor Set">
+            <button class="saved-remove-btn" onclick="removeItem(this)" aria-label="Remove from saved"><i
+                class="bi bi-heart-fill"></i></button>
+          </div>
+          <div class="saved-item-body">
+            <p class="saved-item-name">Faber-Castell Watercolor Set</p>
+            <p class="saved-item-price">₱580.00</p>
+            <span class="saved-item-stock in-stock"><i class="bi bi-check-circle-fill me-1"></i>In Stock</span>
+            <button class="btn btn-pandayan btn-sm w-100 mt-2" onclick="addToCart(this)"><i
+                class="bi bi-cart-plus me-1"></i>Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 4 -->
+      <div class="col-6 col-md-4" data-list="art">
+        <div class="saved-item-card" id="saved-4">
+          <div class="saved-item-img">
+            <img src="../assets/images/brush_pen_set.png" class="saved-item-image" alt="Sakura Koi Brush Pen Set">
+            <button class="saved-remove-btn" onclick="removeItem(this)" aria-label="Remove from saved"><i
+                class="bi bi-heart-fill"></i></button>
+          </div>
+          <div class="saved-item-body">
+            <p class="saved-item-name">Sakura Koi Brush Pen Set</p>
+            <p class="saved-item-price">₱750.00</p>
+            <span class="saved-item-stock low-stock"><i class="bi bi-exclamation-circle-fill me-1"></i>Low Stock</span>
+            <button class="btn btn-pandayan btn-sm w-100 mt-2" onclick="addToCart(this)"><i
+                class="bi bi-cart-plus me-1"></i>Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 5 -->
+      <div class="col-6 col-md-4" data-list="school">
+        <div class="saved-item-card" id="saved-5">
+          <div class="saved-item-img">
+            <img src="../assets/images/ballpen_set.png" class="saved-item-image" alt="Panda Ballpen Set 5 Pieces">
+            <button class="saved-remove-btn" onclick="removeItem(this)" aria-label="Remove from saved"><i
+                class="bi bi-heart-fill"></i></button>
+          </div>
+          <div class="saved-item-body">
+            <p class="saved-item-name">Panda Ballpen Set (5 pcs)</p>
+            <p class="saved-item-price">₱30.00</p>
+            <span class="saved-item-stock in-stock"><i class="bi bi-check-circle-fill me-1"></i>In Stock</span>
+            <button class="btn btn-pandayan btn-sm w-100 mt-2" onclick="addToCart(this)"><i
+                class="bi bi-cart-plus me-1"></i>Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 6 -->
+      <div class="col-6 col-md-4" data-list="office">
+        <div class="saved-item-card" id="saved-6">
+          <div class="saved-item-img">
+            <img src="../assets/images/bond_paper.png" class="saved-item-image" alt="A4 Bond Paper Ream">
+            <button class="saved-remove-btn" onclick="removeItem(this)" aria-label="Remove from saved"><i
+                class="bi bi-heart-fill"></i></button>
+          </div>
+          <div class="saved-item-body">
+            <p class="saved-item-name">A4 Bond Paper (Ream)</p>
+            <p class="saved-item-price">₱195.00</p>
+            <span class="saved-item-stock in-stock"><i class="bi bi-check-circle-fill me-1"></i>In Stock</span>
+            <button class="btn btn-pandayan btn-sm w-100 mt-2" onclick="addToCart(this)"><i
+                class="bi bi-cart-plus me-1"></i>Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 7 -->
+      <div class="col-6 col-md-4" data-list="art">
+        <div class="saved-item-card" id="saved-7">
+          <div class="saved-item-img">
+            <img src="../assets/images/canvas_board.png" class="saved-item-image" alt="Canvas Board 12x16">
+            <button class="saved-remove-btn" onclick="removeItem(this)" aria-label="Remove from saved"><i
+                class="bi bi-heart-fill"></i></button>
+          </div>
+          <div class="saved-item-body">
+            <p class="saved-item-name">Canvas Board 12×16</p>
+            <p class="saved-item-price">₱150.00</p>
+            <span class="saved-item-stock out-stock"><i class="bi bi-x-circle-fill me-1"></i>Out of Stock</span>
+            <button class="btn btn-pandayan btn-sm w-100 mt-2" disabled><i
+                class="bi bi-cart-plus me-1"></i>Unavailable</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 8 -->
+      <div class="col-6 col-md-4" data-list="office">
+        <div class="saved-item-card" id="saved-8">
+          <div class="saved-item-img">
+            <img src="../assets/images/expanding_envelope.png" class="saved-item-image" alt="Expanding Envelope Long">
+            <button class="saved-remove-btn" onclick="removeItem(this)" aria-label="Remove from saved"><i
+                class="bi bi-heart-fill"></i></button>
+          </div>
+          <div class="saved-item-body">
+            <p class="saved-item-name">Expanding Envelope (Long)</p>
+            <p class="saved-item-price">₱35.00</p>
+            <span class="saved-item-stock in-stock"><i class="bi bi-check-circle-fill me-1"></i>In Stock</span>
+            <button class="btn btn-pandayan btn-sm w-100 mt-2" onclick="addToCart(this)"><i
+                class="bi bi-cart-plus me-1"></i>Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Empty State (hidden by default) -->
+    <div class="saved-empty-state d-none" id="empty-state">
+      <i class="bi bi-heart"></i>
+      <h3>No saved items yet</h3>
+      <p>Browse our catalog and tap the heart icon to save items you love.</p>
+      <a href="categories.html" class="btn btn-pandayan px-5">Browse Products</a>
+    </div>
+
+  </main>
+
+  <!-- Remove Confirmation Modal -->
+  <div class="modal fade" id="removeModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
+      <div class="modal-content">
+        <div class="modal-header bg-pandayan">
+          <h5 class="modal-title text-white"><i class="bi bi-heart me-2"></i>Remove Item</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center py-4">
+          <i class="bi bi-heartbreak-fill text-pandayan" style="font-size:2.5rem;"></i>
+          <p class="fw-bold mt-3 mb-1">Remove from saved?</p>
+          <p class="text-muted small">You can always save it again later.</p>
+          <div class="d-flex gap-2 mt-4">
+            <button class="btn btn-pandayan-outline flex-grow-1" data-bs-dismiss="modal">Keep</button>
+            <button class="btn btn-pandayan flex-grow-1" id="confirm-remove-btn"
+              onclick="confirmRemove()">Remove</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cart Toast -->
+  <div class="position-fixed bottom-0 end-0 p-3" style="z-index:1060;">
+    <div class="toast align-items-center text-bg-success border-0" role="alert" id="cartToast" aria-live="assertive">
+      <div class="d-flex">
+        <div class="toast-body"><i class="bi bi-check-circle-fill me-2"></i>Item added to cart!</div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+          aria-label="Close"></button>
+      </div>
+    </div>
+  </div>
+
+  <nav class="bottom-nav" aria-label="Mobile navigation">
+    <a href="../index.html" class="bottom-nav-item"><i class="bi bi-house"></i>Home</a>
+    <a href="categories.html" class="bottom-nav-item"><i class="bi bi-grid"></i>Categories</a>
+    <a href="search.html" class="bottom-nav-item"><i class="bi bi-search"></i>Search</a>
+    <a href="dashboard.html" class="bottom-nav-item active"><i class="bi bi-person-fill"></i>Account</a>
+  </nav>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Filter by list/category
+    function filterList(type, btn) {
+      document.querySelectorAll('.history-tab').forEach(t => t.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('#saved-items-grid > .col-6').forEach(card => {
+        card.style.display = (type === 'all' || card.dataset.list === type) ? '' : 'none';
+      });
+    }
+
+    // Remove item flow
+    let pendingRemoveBtn = null;
+
+    function removeItem(btn) {
+      pendingRemoveBtn = btn;
+      const modal = new bootstrap.Modal(document.getElementById('removeModal'));
+      modal.show();
+    }
+
+    function confirmRemove() {
+      if (pendingRemoveBtn) {
+        const card = pendingRemoveBtn.closest('.col-6');
+        card.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+        card.style.opacity = '0';
+        card.style.transform = 'scale(0.9)';
+        setTimeout(() => {
+          card.remove();
+          updateCount();
+        }, 300);
+      }
+      bootstrap.Modal.getInstance(document.getElementById('removeModal')).hide();
+      pendingRemoveBtn = null;
+    }
+
+    function updateCount() {
+      const remaining = document.querySelectorAll('#saved-items-grid > .col-6').length;
+      document.getElementById('total-count').textContent = remaining;
+      if (remaining === 0) {
+        document.getElementById('saved-items-grid').classList.add('d-none');
+        document.getElementById('empty-state').classList.remove('d-none');
+      }
+    }
+
+    // Add to cart
+    function addToCart(btn) {
+      btn.innerHTML = '<i class="bi bi-check-lg me-1"></i>Added';
+      btn.disabled = true;
+      btn.classList.remove('btn-pandayan');
+      btn.classList.add('btn-outline-secondary');
+      const toast = new bootstrap.Toast(document.getElementById('cartToast'));
+      toast.show();
+    }
+  </script>
+</body>
+
+</html>

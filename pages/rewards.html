@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rewards - Pandaday Bookshop</title>
+  <meta name="description"
+    content="Redeem your loyalty points for exclusive rewards, discounts, and freebies at Pandaday Bookshop.">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+
+<body>
+  <header class="page-header-bar">
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between">
+        <a href="dashboard.html" class="back-btn"><i class="bi bi-arrow-left"></i> Back</a>
+        <span class="fw-bold text-white">Rewards</span>
+        <span style="width:60px;"></span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container my-4">
+
+    <!-- Points Summary Banner -->
+    <div class="rewards-hero mb-4">
+      <div class="row align-items-center">
+        <div class="col-sm-7">
+          <p class="small fw-semibold mb-1 opacity-75"><i class="bi bi-award-fill me-1"></i>Gold Member</p>
+          <div class="rewards-hero-points">2,450 <span class="fs-5 fw-normal">pts</span></div>
+          <p class="small mt-1 mb-0 opacity-75">= ₱245.00 discount value</p>
+        </div>
+        <div class="col-sm-5 text-sm-end mt-3 mt-sm-0">
+          <div class="d-flex flex-column gap-2 align-items-sm-end">
+            <div class="rewards-tier-progress">
+              <div class="d-flex justify-content-between small mb-1">
+                <span class="fw-semibold">Gold</span>
+                <span class="opacity-75">Platinum at 5,000 pts</span>
+              </div>
+              <div class="progress" style="height:8px; border-radius:50px; background:rgba(255,255,255,0.2);">
+                <div class="progress-bar" role="progressbar" style="width:49%; background:white; border-radius:50px;"
+                  aria-valuenow="2450" aria-valuemin="0" aria-valuemax="5000"></div>
+              </div>
+              <p class="small mt-1 mb-0 opacity-75">2,550 pts to Platinum</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Filter Tabs -->
+    <div class="history-tabs mb-4" role="tablist">
+      <button class="history-tab active" role="tab" onclick="filterRewards('all', this)" id="tab-all">All
+        Rewards</button>
+      <button class="history-tab" role="tab" onclick="filterRewards('discount', this)"
+        id="tab-discount">Discounts</button>
+      <button class="history-tab" role="tab" onclick="filterRewards('freebie', this)" id="tab-freebie">Freebies</button>
+      <button class="history-tab" role="tab" onclick="filterRewards('voucher', this)" id="tab-voucher">Vouchers</button>
+    </div>
+
+    <!-- Rewards Grid -->
+    <div class="row g-3" id="rewards-grid">
+
+      <!-- Reward 1 -->
+      <div class="col-md-6" data-category="discount">
+        <div class="reward-card" id="reward-1">
+          <div class="reward-card-header discount">
+            <i class="bi bi-percent"></i>
+            <span class="reward-cost-badge">500 pts</span>
+          </div>
+          <div class="reward-card-body">
+            <h3 class="reward-title">₱50 Off Any Purchase</h3>
+            <p class="reward-desc">Get ₱50 discount on your next order. No minimum spend required.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="reward-tag"><i class="bi bi-tag-fill me-1"></i>Discount</span>
+              <button class="btn btn-pandayan btn-sm px-4"
+                onclick="redeemReward(this, 500, '₱50 Off Any Purchase')">Redeem</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reward 2 -->
+      <div class="col-md-6" data-category="freebie">
+        <div class="reward-card" id="reward-2">
+          <div class="reward-card-header freebie">
+            <i class="bi bi-gift-fill"></i>
+            <span class="reward-cost-badge">300 pts</span>
+          </div>
+          <div class="reward-card-body">
+            <h3 class="reward-title">Free Ballpen Set</h3>
+            <p class="reward-desc">Claim a Panda ballpen set (5 pcs) on your next visit or order.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="reward-tag"><i class="bi bi-box-seam me-1"></i>Freebie</span>
+              <button class="btn btn-pandayan btn-sm px-4"
+                onclick="redeemReward(this, 300, 'Free Ballpen Set')">Redeem</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reward 3 -->
+      <div class="col-md-6" data-category="voucher">
+        <div class="reward-card" id="reward-3">
+          <div class="reward-card-header voucher">
+            <i class="bi bi-ticket-perforated-fill"></i>
+            <span class="reward-cost-badge">1,000 pts</span>
+          </div>
+          <div class="reward-card-body">
+            <h3 class="reward-title">₱100 Gift Voucher</h3>
+            <p class="reward-desc">A ₱100 e-voucher you can use or send as a gift to a friend.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="reward-tag"><i class="bi bi-ticket-perforated me-1"></i>Voucher</span>
+              <button class="btn btn-pandayan btn-sm px-4"
+                onclick="redeemReward(this, 1000, '₱100 Gift Voucher')">Redeem</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reward 4 -->
+      <div class="col-md-6" data-category="discount">
+        <div class="reward-card" id="reward-4">
+          <div class="reward-card-header discount">
+            <i class="bi bi-percent"></i>
+            <span class="reward-cost-badge">800 pts</span>
+          </div>
+          <div class="reward-card-body">
+            <h3 class="reward-title">15% Off Art Supplies</h3>
+            <p class="reward-desc">Get 15% off on all art supplies. Valid for one transaction.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="reward-tag"><i class="bi bi-tag-fill me-1"></i>Discount</span>
+              <button class="btn btn-pandayan btn-sm px-4"
+                onclick="redeemReward(this, 800, '15% Off Art Supplies')">Redeem</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reward 5 -->
+      <div class="col-md-6" data-category="freebie">
+        <div class="reward-card" id="reward-5">
+          <div class="reward-card-header freebie">
+            <i class="bi bi-gift-fill"></i>
+            <span class="reward-cost-badge">1,500 pts</span>
+          </div>
+          <div class="reward-card-body">
+            <h3 class="reward-title">Free Intermediate Pad Bundle</h3>
+            <p class="reward-desc">Receive 5 intermediate pads free with your next purchase.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="reward-tag"><i class="bi bi-box-seam me-1"></i>Freebie</span>
+              <button class="btn btn-pandayan btn-sm px-4"
+                onclick="redeemReward(this, 1500, 'Free Intermediate Pad Bundle')">Redeem</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reward 6 -->
+      <div class="col-md-6" data-category="voucher">
+        <div class="reward-card" id="reward-6">
+          <div class="reward-card-header voucher">
+            <i class="bi bi-truck-front-fill"></i>
+            <span class="reward-cost-badge">200 pts</span>
+          </div>
+          <div class="reward-card-body">
+            <h3 class="reward-title">Free Delivery Voucher</h3>
+            <p class="reward-desc">Waive the delivery fee on your next order. Any delivery area.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="reward-tag"><i class="bi bi-ticket-perforated me-1"></i>Voucher</span>
+              <button class="btn btn-pandayan btn-sm px-4"
+                onclick="redeemReward(this, 200, 'Free Delivery Voucher')">Redeem</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Points History -->
+    <h2 class="h5 fw-bold mt-5 mb-3"><i class="bi bi-clock-history me-2 text-pandayan"></i>Points History</h2>
+
+    <div class="reward-history-item earned">
+      <div class="d-flex justify-content-between align-items-start">
+        <div>
+          <p class="fw-semibold mb-0 small">Points Earned – Purchase</p>
+          <p class="small text-muted mb-0">Order #PB20260215001</p>
+        </div>
+        <div class="text-end">
+          <span class="reward-points-change positive">+50 pts</span>
+          <p class="small text-muted mb-0">Feb 15, 2026</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="reward-history-item earned">
+      <div class="d-flex justify-content-between align-items-start">
+        <div>
+          <p class="fw-semibold mb-0 small">Gold Member Bonus</p>
+          <p class="small text-muted mb-0">Monthly loyalty bonus</p>
+        </div>
+        <div class="text-end">
+          <span class="reward-points-change positive">+100 pts</span>
+          <p class="small text-muted mb-0">Feb 1, 2026</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="reward-history-item redeemed">
+      <div class="d-flex justify-content-between align-items-start">
+        <div>
+          <p class="fw-semibold mb-0 small">Redeemed – Free Delivery</p>
+          <p class="small text-muted mb-0">Voucher applied to Order #PB20260128003</p>
+        </div>
+        <div class="text-end">
+          <span class="reward-points-change negative">−200 pts</span>
+          <p class="small text-muted mb-0">Jan 28, 2026</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="reward-history-item earned">
+      <div class="d-flex justify-content-between align-items-start">
+        <div>
+          <p class="fw-semibold mb-0 small">Points Earned – Bulk Order</p>
+          <p class="small text-muted mb-0">Order #PB20260120005</p>
+        </div>
+        <div class="text-end">
+          <span class="reward-points-change positive">+250 pts</span>
+          <p class="small text-muted mb-0">Jan 20, 2026</p>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Redeem Confirmation Modal -->
+  <div class="modal fade" id="redeemModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
+      <div class="modal-content">
+        <div class="modal-header bg-pandayan">
+          <h5 class="modal-title text-white"><i class="bi bi-gift me-2"></i>Confirm Redemption</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center py-4">
+          <i class="bi bi-gift-fill text-pandayan" style="font-size:2.5rem;"></i>
+          <p class="fw-bold mt-3 mb-1" id="redeem-reward-name"></p>
+          <p class="text-muted small" id="redeem-reward-cost"></p>
+          <div class="d-flex gap-2 mt-4">
+            <button class="btn btn-pandayan-outline flex-grow-1" data-bs-dismiss="modal">Cancel</button>
+            <button class="btn btn-pandayan flex-grow-1" id="confirm-redeem-btn"
+              onclick="confirmRedeem()">Confirm</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Success Toast -->
+  <div class="position-fixed bottom-0 end-0 p-3" style="z-index:1060;">
+    <div class="toast align-items-center text-bg-success border-0" role="alert" id="redeemToast" aria-live="assertive">
+      <div class="d-flex">
+        <div class="toast-body"><i class="bi bi-check-circle-fill me-2"></i>Reward redeemed successfully!</div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+          aria-label="Close"></button>
+      </div>
+    </div>
+  </div>
+
+  <nav class="bottom-nav" aria-label="Mobile navigation">
+    <a href="../index.html" class="bottom-nav-item"><i class="bi bi-house"></i>Home</a>
+    <a href="categories.html" class="bottom-nav-item"><i class="bi bi-grid"></i>Categories</a>
+    <a href="search.html" class="bottom-nav-item"><i class="bi bi-search"></i>Search</a>
+    <a href="profile.html" class="bottom-nav-item"><i class="bi bi-person"></i>Profile</a>
+  </nav>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Filter rewards by category
+    function filterRewards(type, btn) {
+      document.querySelectorAll('.history-tab').forEach(t => t.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('#rewards-grid > .col-md-6').forEach(card => {
+        card.style.display = (type === 'all' || card.dataset.category === type) ? '' : 'none';
+      });
+    }
+
+    // Redeem flow
+    let pendingBtn = null;
+    let pendingCost = 0;
+
+    function redeemReward(btn, cost, name) {
+      pendingBtn = btn;
+      pendingCost = cost;
+      document.getElementById('redeem-reward-name').textContent = name;
+      document.getElementById('redeem-reward-cost').textContent = cost.toLocaleString() + ' points will be deducted';
+      const modal = new bootstrap.Modal(document.getElementById('redeemModal'));
+      modal.show();
+    }
+
+    function confirmRedeem() {
+      if (pendingBtn) {
+        pendingBtn.innerHTML = '<i class="bi bi-check-lg me-1"></i>Redeemed';
+        pendingBtn.disabled = true;
+        pendingBtn.classList.remove('btn-pandayan');
+        pendingBtn.classList.add('btn-outline-secondary');
+      }
+      // Close modal
+      bootstrap.Modal.getInstance(document.getElementById('redeemModal')).hide();
+      // Show success toast
+      const toast = new bootstrap.Toast(document.getElementById('redeemToast'));
+      toast.show();
+      pendingBtn = null;
+      pendingCost = 0;
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store Locator - Pandaday Bookshop</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+
+<body>
+
+    <header class="site-header sticky-top">
+        <div class="container py-3">
+            <div class="row align-items-center">
+                <div class="col-md-3 col-6">
+                    <a class="navbar-brand" href="../index.html" aria-label="Pandayan Bookshop Home">
+                        <i class="bi bi-book-half me-2"></i>Pandaday Bookshop
+                    </a>
+                </div>
+                <div class="col-md-6 d-none d-md-block">
+                    <form class="search-bar" role="search" action="search.html">
+                        <input class="form-control form-control-lg" type="search"
+                            placeholder="Search for products, categories, or brands..." aria-label="Search products">
+                        <button class="btn bg-pandayan text-white" type="submit" aria-label="Submit search"><i
+                                class="bi bi-search"></i></button>
+                    </form>
+                </div>
+                <div class="col-md-3 col-6 text-end d-flex justify-content-end gap-2">
+                    <a href="cart.html" class="header-icon" aria-label="Shopping Cart">
+                        <i class="bi bi-cart3 fs-5"></i>
+                        <span class="badge rounded-pill bg-warning text-dark">0</span>
+                    </a>
+                    <a href="dashboard.html" class="header-icon" aria-label="User Account">
+                        <i class="bi bi-person-circle fs-5"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <nav class="secondary-nav" aria-label="Main navigation">
+            <div class="container">
+                <ul class="navbar-nav flex-row gap-1">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="categories.html">Categories</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="locator.html">Store Locator</a></li>
+                    <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="bulk-orders.html">Bulk Orders</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container my-5">
+        <div class="text-center mb-5">
+            <h1 class="fw-bold"><i class="bi bi-shop me-2 text-pandayan"></i>Find a Store</h1>
+            <p class="text-muted">Locate the nearest Pandayan Bookshop for quick pick-ups.</p>
+
+            <div class="row justify-content-center mt-4">
+                <div class="col-md-6">
+                    <form class="search-bar" role="search">
+                        <input class="form-control form-control-lg shadow-sm" type="search"
+                            placeholder="Enter City or Province...">
+                        <button class="btn bg-pandayan text-white" type="submit"><i class="bi bi-search"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <!-- Graceful Error Handling: Using icons instead of broken images -->
+            <div class="col-md-6 col-lg-4">
+                <div class="bg-white rounded-3 p-4 shadow-sm h-100 border-top border-4 border-pandayan">
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+                        <h3 class="h5 fw-bold mb-0">Pandayan - Nabua</h3>
+                        <span class="badge bg-success">Open</span>
+                    </div>
+                    <p class="text-muted small mb-2"><i class="bi bi-geo-alt-fill me-2 text-pandayan"></i>123 Main St,
+                        Nabua, Camarines Sur</p>
+                    <p class="text-muted small mb-3"><i class="bi bi-clock-fill me-2 text-pandayan"></i>8:00 AM - 6:00
+                        PM</p>
+                    <a href="#" class="btn btn-pandayan-outline w-100">View on Map</a>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="bg-white rounded-3 p-4 shadow-sm h-100 border-top border-4 border-pandayan">
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+                        <h3 class="h5 fw-bold mb-0">Pandayan - Iriga</h3>
+                        <span class="badge bg-success">Open</span>
+                    </div>
+                    <p class="text-muted small mb-2"><i class="bi bi-geo-alt-fill me-2 text-pandayan"></i>Highway 1,
+                        Iriga City</p>
+                    <p class="text-muted small mb-3"><i class="bi bi-clock-fill me-2 text-pandayan"></i>8:30 AM - 7:00
+                        PM</p>
+                    <a href="#" class="btn btn-pandayan-outline w-100">View on Map</a>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="bg-white rounded-3 p-4 shadow-sm h-100 border-top border-4 border-secondary opacity-75">
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+                        <h3 class="h5 fw-bold mb-0">Pandayan - Legazpi</h3>
+                        <span class="badge bg-secondary">Closed</span>
+                    </div>
+                    <p class="text-muted small mb-2"><i class="bi bi-geo-alt-fill me-2 text-secondary"></i>Rizal St,
+                        Legazpi City</p>
+                    <p class="text-muted small mb-3"><i class="bi bi-clock-fill me-2 text-secondary"></i>Opens Tomorrow
+                        8:00 AM</p>
+                    <button class="btn btn-outline-secondary w-100" disabled>View on Map</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Persistent Help Button -->
+    <button id="help-btn" data-bs-toggle="modal" data-bs-target="#helpModal" aria-label="Open Help and Support"><i
+            class="bi bi-question-circle me-2"></i>Help</button>
+    <div class="modal fade" id="helpModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-pandayan">
+                    <h5 class="modal-title"><i class="bi bi-headset me-2"></i>Pandayan Support</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="list-group list-group-flush">
+                        <a href="dashboard.html" class="list-group-item list-group-item-action py-3"><i
+                                class="bi bi-box-seam me-2 text-pandayan"></i>Track my order</a>
+                        <a href="locator.html" class="list-group-item list-group-item-action py-3"><i
+                                class="bi bi-shop me-2 text-pandayan"></i>Find a Store</a>
+                    </div>
+                    <div class="mt-4 text-center"><a href="tel:0289900909" class="btn btn-pandayan-outline w-100"><i
+                                class="bi bi-telephone me-2"></i>Call (02) 8990-0909</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

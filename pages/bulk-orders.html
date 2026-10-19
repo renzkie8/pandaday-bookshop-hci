@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bulk Orders - Pandaday Bookshop</title>
+  <meta name="description"
+    content="Order in bulk and save up to 20%. Perfect for classrooms, offices, and events at Pandaday Bookshop.">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+
+<body>
+  <header class="site-header sticky-top">
+    <div class="container py-3">
+      <div class="row align-items-center">
+        <div class="col-md-3 col-6">
+          <a class="navbar-brand" href="../index.html"><i class="bi bi-book-half me-2"></i>Pandaday Bookshop</a>
+        </div>
+        <div class="col-md-6 d-none d-md-block">
+          <form class="search-bar" role="search" action="search.html">
+            <input class="form-control form-control-lg" type="search" name="q" placeholder="Search for products..."
+              aria-label="Search products">
+            <button class="btn bg-pandayan text-white" type="submit" aria-label="Search"><i
+                class="bi bi-search"></i></button>
+          </form>
+        </div>
+        <div class="col-md-3 col-6 text-end d-flex justify-content-end gap-2">
+          <a href="cart.html" class="header-icon" aria-label="Cart"><i class="bi bi-cart3 fs-5"></i><span
+              class="badge rounded-pill bg-warning text-dark">0</span></a>
+          <a href="profile.html" class="header-icon" aria-label="Account"><i class="bi bi-person-circle fs-5"></i></a>
+        </div>
+      </div>
+    </div>
+    <nav class="secondary-nav" aria-label="Main navigation">
+      <div class="container">
+        <ul class="navbar-nav flex-row gap-1">
+          <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="categories.html">Categories</a></li>
+          <li class="nav-item"><a class="nav-link" href="locator.html">Store Locator</a></li>
+          <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+          <li class="nav-item"><a class="nav-link active" href="bulk-orders.html">Bulk Orders</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container my-4">
+
+    <!-- Bulk Hero -->
+    <div class="bulk-hero mb-4">
+      <div class="row align-items-center">
+        <div class="col-md-8">
+          <p class="small text-warning fw-semibold mb-1"><i class="bi bi-building me-1"></i>For Teachers &amp;
+            Institutions</p>
+          <h1 class="h3 fw-bold text-white mb-2">Order in Bulk &amp; Save Up to 20%</h1>
+          <p class="text-white opacity-75 mb-3 small">Perfect for classrooms, offices, and events. Minimum order of ₱500
+            for bulk pricing.</p>
+          <a href="#bulk-form" class="btn btn-pandayan-gold btn-sm px-4">Request a Custom Quote</a>
+        </div>
+        <div class="col-md-4 text-center d-none d-md-block">
+          <i class="bi bi-boxes text-white opacity-50" style="font-size: 5rem;"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- Search -->
+    <div class="mb-4">
+      <form class="search-bar" role="search">
+        <input class="form-control" type="search" placeholder="Search products for bulk order..."
+          aria-label="Search bulk products">
+        <button class="btn bg-pandayan text-white" type="submit" aria-label="Search"><i
+            class="bi bi-search"></i></button>
+      </form>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-lg-8">
+
+        <h2 class="h5 fw-bold mb-3">Popular Bulk Items</h2>
+
+        <!-- Bulk Item 1 -->
+        <div class="bulk-item-card">
+          <img src="../assets/images/intermediate_pad.png" alt="Intermediate Pad"
+            style="width:72px;height:72px;object-fit:cover;border-radius:8px;flex-shrink:0;">
+          <div class="flex-grow-1">
+            <div class="d-flex align-items-start justify-content-between mb-1">
+              <h3 class="h6 fw-bold mb-0">Intermediate Pad</h3>
+              <span class="bulk-savings-badge">Save ₱3 per pad</span>
+            </div>
+            <p class="small text-muted mb-1">50 leaves. Perfect for students.</p>
+            <p class="small mb-0"><span class="text-pandayan fw-bold">₱40/pc</span> <span class="text-muted">(bulk price
+                · min. 10pcs)</span></p>
+          </div>
+          <div class="d-flex flex-column align-items-end gap-2">
+            <input type="number" class="bulk-qty-input" value="10" min="10" aria-label="Quantity" id="qty-pad">
+            <button class="btn btn-pandayan btn-sm px-3" onclick="addBulkToCart('Intermediate Pad', this)">Add</button>
+          </div>
+        </div>
+
+        <!-- Bulk Item 2 -->
+        <div class="bulk-item-card">
+          <img src="../assets/images/ballpen_set.png" alt="Ballpen Box"
+            style="width:72px;height:72px;object-fit:cover;border-radius:8px;flex-shrink:0;">
+          <div class="flex-grow-1">
+            <div class="d-flex align-items-start justify-content-between mb-1">
+              <h3 class="h6 fw-bold mb-0">Ballpen Box (12 pcs)</h3>
+              <span class="bulk-savings-badge">Save ₱50 per box</span>
+            </div>
+            <p class="small text-muted mb-1">Black or blue, smooth ink flow.</p>
+            <p class="small mb-0"><span class="text-pandayan fw-bold">₱140/box</span> <span class="text-muted">(bulk
+                price · min. 10 boxes)</span></p>
+          </div>
+          <div class="d-flex flex-column align-items-end gap-2">
+            <input type="number" class="bulk-qty-input" value="10" min="10" aria-label="Quantity" id="qty-ballpen">
+            <button class="btn btn-pandayan btn-sm px-3" onclick="addBulkToCart('Ballpen Box', this)">Add</button>
+          </div>
+        </div>
+
+        <!-- Bulk Item 3 -->
+        <div class="bulk-item-card">
+          <img src="../assets/images/faber_castell.png" alt="Faber-Castell Color Pencils">
+          <div class="flex-grow-1">
+            <div class="d-flex align-items-start justify-content-between mb-1">
+              <h3 class="h6 fw-bold mb-0">Faber-Castell Set</h3>
+              <span class="bulk-savings-badge">Save ₱30 per set</span>
+            </div>
+            <p class="small text-muted mb-1">24-color pencils, perfect for art class.</p>
+            <p class="small mb-0"><span class="text-pandayan fw-bold">₱420/set</span> <span class="text-muted">(bulk
+                price · min. 5 sets)</span></p>
+          </div>
+          <div class="d-flex flex-column align-items-end gap-2">
+            <input type="number" class="bulk-qty-input" value="5" min="5" aria-label="Quantity" id="qty-faber">
+            <button class="btn btn-pandayan btn-sm px-3" onclick="addBulkToCart('Faber-Castell Set', this)">Add</button>
+          </div>
+        </div>
+
+        <!-- Bulk Item 4 -->
+        <div class="bulk-item-card">
+          <img src="../assets/images/sakura_watercolor.png" alt="Sakura Watercolor Set">
+          <div class="flex-grow-1">
+            <div class="d-flex align-items-start justify-content-between mb-1">
+              <h3 class="h6 fw-bold mb-0">Sakura Watercolor Set</h3>
+              <span class="bulk-savings-badge">Save ₱40 per set</span>
+            </div>
+            <p class="small text-muted mb-1">12-color professional watercolors.</p>
+            <p class="small mb-0"><span class="text-pandayan fw-bold">₱310/set</span> <span class="text-muted">(bulk
+                price · min. 5 sets)</span></p>
+          </div>
+          <div class="d-flex flex-column align-items-end gap-2">
+            <input type="number" class="bulk-qty-input" value="5" min="5" aria-label="Quantity" id="qty-sakura">
+            <button class="btn btn-pandayan btn-sm px-3" onclick="addBulkToCart('Sakura Watercolor', this)">Add</button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Custom Quote Form -->
+      <div class="col-lg-4">
+        <div class="form-section" id="bulk-form">
+          <div class="form-section-title"><i class="bi bi-chat-square-text"></i>Need a Custom Quote?</div>
+          <p class="small text-muted mb-3">For orders over ₱5,000 or custom requirements, contact our bulk order team.
+          </p>
+          <form novalidate>
+            <div class="mb-3">
+              <label for="bulk-name" class="form-label">Full Name *</label>
+              <input type="text" class="form-control" id="bulk-name" placeholder="Your name" required>
+            </div>
+            <div class="mb-3">
+              <label for="bulk-contact" class="form-label">Contact Number *</label>
+              <input type="tel" class="form-control" id="bulk-contact" placeholder="09XX XXX XXXX" required>
+            </div>
+            <div class="mb-3">
+              <label for="bulk-org" class="form-label">School / Organization</label>
+              <input type="text" class="form-control" id="bulk-org" placeholder="e.g. Nabua Elementary School">
+            </div>
+            <div class="mb-3">
+              <label for="bulk-items" class="form-label">Items Needed *</label>
+              <textarea class="form-control" id="bulk-items" rows="3" placeholder="List items and quantities needed..."
+                required></textarea>
+            </div>
+            <button type="button" class="btn btn-pandayan w-100" onclick="submitQuote(this)">
+              <i class="bi bi-send me-2"></i>Request Bulk Quote
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <h6><i class="bi bi-book-half me-2"></i>Pandaday Bookshop</h6>
+          <p class="small">Your trusted partner for quality school supplies, books, and art materials since 1989.</p>
+        </div>
+        <div class="col-md-4">
+          <h6>Quick Links</h6>
+          <ul class="list-unstyled small">
+            <li class="mb-2"><a href="categories.html">Categories</a></li>
+            <li class="mb-2"><a href="locator.html">Store Locator</a></li>
+            <li class="mb-2"><a href="help.html">Help &amp; Support</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h6>Contact</h6>
+          <p class="small mb-1"><i class="bi bi-telephone me-2"></i>(054) 871-0909</p>
+          <p class="small"><i class="bi bi-envelope me-2"></i>info@pandaday.com.ph</p>
+        </div>
+      </div>
+      <hr class="border-secondary mt-4">
+      <p class="text-center small mb-0 opacity-50">&copy; 2026 Pandaday Bookshop. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <nav class="bottom-nav" aria-label="Mobile navigation">
+    <a href="../index.html" class="bottom-nav-item"><i class="bi bi-house"></i>Home</a>
+    <a href="categories.html" class="bottom-nav-item"><i class="bi bi-grid"></i>Categories</a>
+    <a href="search.html" class="bottom-nav-item"><i class="bi bi-search"></i>Search</a>
+    <a href="dashboard.html" class="bottom-nav-item"><i class="bi bi-person"></i>Account</a>
+  </nav>
+
+  <button id="help-btn" data-bs-toggle="modal" data-bs-target="#helpModal" aria-label="Open Help"><i
+      class="bi bi-question-circle me-2"></i>Help</button>
+  <div class="modal fade" id="helpModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-pandayan">
+          <h5 class="modal-title text-white"><i class="bi bi-headset me-2"></i>Pandaday Support</h5><button
+            type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="list-group list-group-flush">
+            <a href="help.html" class="list-group-item list-group-item-action py-3"><i
+                class="bi bi-question-circle me-2 text-pandayan"></i>Help &amp; FAQs</a>
+            <a href="locator.html" class="list-group-item list-group-item-action py-3"><i
+                class="bi bi-shop me-2 text-pandayan"></i>Find a Store</a>
+          </div>
+          <div class="mt-4 text-center"><a href="tel:0548710909" class="btn btn-pandayan-outline w-100"><i
+                class="bi bi-telephone me-2"></i>Call (054) 871-0909</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/app.js"></script>
+  <script>
+    function submitQuote(btn) {
+      btn.innerHTML = '<i class="bi bi-check-circle me-2"></i>Quote Sent!';
+      btn.classList.add('btn-success'); btn.classList.remove('btn-pandayan');
+      btn.disabled = true;
+    }
+  </script>
+</body>
+
+</html>

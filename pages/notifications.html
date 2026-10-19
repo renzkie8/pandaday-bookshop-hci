@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notifications - Pandaday Bookshop</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+
+<body>
+  <header class="page-header-bar">
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between">
+        <a href="dashboard.html" class="back-btn"><i class="bi bi-arrow-left"></i> Back</a>
+        <span class="fw-bold text-white">Notifications</span>
+        <button class="bg-transparent border-0 text-white small" onclick="markAllRead()"
+          aria-label="Mark all as read">Mark all read</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container my-4">
+
+    <!-- Filter Tabs -->
+    <div class="history-tabs mb-4" role="tablist">
+      <button class="history-tab active" role="tab" onclick="filterNotifs('all', this)">All</button>
+      <button class="history-tab" role="tab" onclick="filterNotifs('orders', this)">Orders</button>
+      <button class="history-tab" role="tab" onclick="filterNotifs('promos', this)">Promos</button>
+    </div>
+
+    <!-- Today -->
+    <p class="small fw-bold text-muted text-uppercase mb-2">Today</p>
+
+    <div class="notification-item unread" data-type="orders">
+      <div class="notification-icon notif-order"><i class="bi bi-truck"></i></div>
+      <div class="flex-grow-1">
+        <p class="fw-semibold mb-0 small">Order Update</p>
+        <p class="small text-muted mb-0">Your order #PB20260210002 is out for delivery. Expected by 6:00 PM today.</p>
+      </div>
+      <span class="notification-time">10 mins ago</span>
+    </div>
+
+    <div class="notification-item unread" data-type="orders">
+      <div class="notification-icon notif-points"><i class="bi bi-star-fill"></i></div>
+      <div class="flex-grow-1">
+        <p class="fw-semibold mb-0 small">Points Earned</p>
+        <p class="small text-muted mb-0">You earned 50 points from your recent purchase! Current balance: 2,450 points.
+        </p>
+      </div>
+      <span class="notification-time">2 hrs ago</span>
+    </div>
+
+    <!-- Yesterday -->
+    <p class="small fw-bold text-muted text-uppercase mb-2 mt-4">Yesterday</p>
+
+    <div class="notification-item" data-type="promos">
+      <div class="notification-icon notif-promo"><i class="bi bi-tag-fill"></i></div>
+      <div class="flex-grow-1">
+        <p class="fw-semibold mb-0 small">Special Offer 🎉</p>
+        <p class="small text-muted mb-0">Balik Eskwela Promo! Get 20% off on all school supplies. Hurry! Limited time
+          only!</p>
+      </div>
+      <span class="notification-time">1 day ago</span>
+    </div>
+
+    <div class="notification-item" data-type="orders">
+      <div class="notification-icon notif-order"><i class="bi bi-check-circle-fill"></i></div>
+      <div class="flex-grow-1">
+        <p class="fw-semibold mb-0 small">Order Delivered ✓</p>
+        <p class="small text-muted mb-0">Your order #PB20260215001 has been delivered successfully.</p>
+      </div>
+      <span class="notification-time">1 day ago</span>
+    </div>
+
+    <!-- Older -->
+    <p class="small fw-bold text-muted text-uppercase mb-2 mt-4">Older</p>
+
+    <div class="notification-item" data-type="promos">
+      <div class="notification-icon notif-promo"><i class="bi bi-bag-heart"></i></div>
+      <div class="flex-grow-1">
+        <p class="fw-semibold mb-0 small">New Arrivals</p>
+        <p class="small text-muted mb-0">Check out our new Faber-Castell and Sakura watercolor collections just arrived!
+        </p>
+      </div>
+      <span class="notification-time">3 days ago</span>
+    </div>
+
+    <div class="notification-item" data-type="orders">
+      <div class="notification-icon notif-points"><i class="bi bi-award-fill"></i></div>
+      <div class="flex-grow-1">
+        <p class="fw-semibold mb-0 small">Gold Member Upgrade!</p>
+        <p class="small text-muted mb-0">Congratulations! You've been upgraded to Gold Member status. Enjoy 5% extra
+          points on all purchases.</p>
+      </div>
+      <span class="notification-time">5 days ago</span>
+    </div>
+
+  </main>
+
+  <nav class="bottom-nav" aria-label="Mobile navigation">
+    <a href="../index.html" class="bottom-nav-item"><i class="bi bi-house"></i>Home</a>
+    <a href="categories.html" class="bottom-nav-item"><i class="bi bi-grid"></i>Categories</a>
+    <a href="search.html" class="bottom-nav-item"><i class="bi bi-search"></i>Search</a>
+    <a href="dashboard.html" class="bottom-nav-item active"><i class="bi bi-person-fill"></i>Account</a>
+  </nav>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function filterNotifs(type, btn) {
+      document.querySelectorAll('.history-tab').forEach(t => t.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.notification-item').forEach(item => {
+        item.style.display = (type === 'all' || item.dataset.type === type) ? '' : 'none';
+      });
+    }
+    function markAllRead() {
+      document.querySelectorAll('.notification-item.unread').forEach(item => item.classList.remove('unread'));
+    }
+  </script>
+</body>
+
+</html>

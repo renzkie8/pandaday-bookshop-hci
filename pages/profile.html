@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Profile - Pandaday Bookshop</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+
+<body>
+  <!-- Standard Header -->
+  <header class="site-header sticky-top">
+    <div class="container py-3">
+      <div class="row align-items-center">
+        <div class="col-md-3 col-6">
+          <a class="navbar-brand" href="../index.html"><i class="bi bi-book-half me-2"></i>Pandaday Bookshop</a>
+        </div>
+        <div class="col-md-6 d-none d-md-block">
+          <form class="search-bar" role="search" action="search.html">
+            <input class="form-control form-control-lg" type="search" name="q" placeholder="Search for products..."
+              aria-label="Search products">
+            <button class="btn bg-pandayan text-white" type="submit" aria-label="Search"><i
+                class="bi bi-search"></i></button>
+          </form>
+        </div>
+        <div class="col-md-3 col-6 text-end d-flex justify-content-end gap-2">
+          <a href="cart.html" class="header-icon" aria-label="Cart"><i class="bi bi-cart3 fs-5"></i><span
+              class="badge rounded-pill bg-warning text-dark">0</span></a>
+          <a href="profile.html" class="header-icon" aria-label="Account"><i class="bi bi-person-circle fs-5"></i></a>
+        </div>
+      </div>
+    </div>
+    <nav class="secondary-nav" aria-label="Main navigation">
+      <div class="container">
+        <ul class="navbar-nav flex-row gap-1">
+          <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="categories.html">Categories</a></li>
+          <li class="nav-item"><a class="nav-link" href="locator.html">Store Locator</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Dashboard
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="dashboard.html"><i class="bi bi-speedometer2"></i> Dashboard</a></li>
+              <li><a class="dropdown-item" href="order-history.html"><i class="bi bi-bag-check"></i> Order History</a>
+              </li>
+              <li><a class="dropdown-item" href="saved-items.html"><i class="bi bi-heart"></i> Saved Items</a></li>
+              <li><a class="dropdown-item" href="rewards.html"><i class="bi bi-gift"></i> Rewards</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item text-danger" href="login.html"><i class="bi bi-box-arrow-right"></i>
+                  Logout</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="bulk-orders.html">Bulk Orders</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container my-5">
+    <div class="max-width-600 mx-auto" style="max-width: 600px;">
+      <h1 class="h3 fw-bold mb-4 text-center">Personal Information</h1>
+
+      <!-- Profile Detail Card -->
+      <div class="bg-white rounded-3 p-5 shadow-sm text-center mb-4">
+        <div style="font-size:5rem;" class="text-pandayan mb-3"><i class="bi bi-person-circle"></i></div>
+        <h2 class="h4 fw-bold mb-1">Juan Dela Cruz</h2>
+        <p class="text-muted mb-4">Member ID: #PN-2024-0891</p>
+
+        <div class="row text-start mt-4 g-3">
+          <div class="col-sm-6">
+            <label class="small text-muted text-uppercase fw-semibold">Email Address</label>
+            <p class="fw-medium">juan.delacruz@email.com</p>
+          </div>
+          <div class="col-sm-6">
+            <label class="small text-muted text-uppercase fw-semibold">Phone Number</label>
+            <p class="fw-medium">0912 345 6789</p>
+          </div>
+          <div class="col-sm-6">
+            <label class="small text-muted text-uppercase fw-semibold">Membership Tier</label>
+            <p class="fw-medium"><i class="bi bi-award-fill text-pandayan me-1"></i>Gold Member</p>
+          </div>
+          <div class="col-sm-6">
+            <label class="small text-muted text-uppercase fw-semibold">Member Since</label>
+            <p class="fw-medium">January 2024</p>
+          </div>
+        </div>
+
+        <hr class="my-4 opacity-50">
+
+        <!-- Points Card (Expanded) -->
+        <div class="points-card p-4">
+          <p class="small fw-semibold mb-2 opacity-75">Your Loyalty Points</p>
+          <div class="points-number fs-1">2,450 <span class="fs-4 fw-normal">pts</span></div>
+          <div class="progress mt-3 mb-2" style="height: 8px;">
+            <div class="progress-bar bg-pandayan" role="progressbar" style="width: 75%" aria-valuenow="75"
+              aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+          <p class="small mb-0 opacity-75">550 more points until Platinum status</p>
+        </div>
+
+        <div class="d-grid gap-2 mt-5">
+          <button class="btn btn-pandayan">Edit Profile Information</button>
+          <a href="dashboard.html" class="btn btn-pandayan-outline">Return to Dashboard</a>
+        </div>
+      </div>
+
+      <div class="text-center mt-4">
+        <a href="login.html" class="text-danger text-decoration-none fw-semibold">
+          <i class="bi bi-box-arrow-right me-1"></i>Logout from all devices
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <nav class="bottom-nav" aria-label="Mobile navigation">
+    <a href="../index.html" class="bottom-nav-item"><i class="bi bi-house"></i>Home</a>
+    <a href="categories.html" class="bottom-nav-item"><i class="bi bi-grid"></i>Categories</a>
+    <a href="search.html" class="bottom-nav-item"><i class="bi bi-search"></i>Search</a>
+    <a href="profile.html" class="bottom-nav-item active"><i class="bi bi-person-fill"></i>Profile</a>
+  </nav>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/app.js"></script>
+</body>
+
+</html>

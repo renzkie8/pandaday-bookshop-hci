@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pandaday Bookshop - Home</title>
+  <meta name="description"
+    content="Pandaday Bookshop – Your one-stop shop for school supplies, books, art supplies, and office essentials.">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="site-header sticky-top">
+    <div class="container py-3">
+      <div class="row align-items-center">
+        <div class="col-md-3 col-6">
+          <a class="navbar-brand" href="index.html"><i class="bi bi-book-half me-2"></i>Pandaday Bookshop</a>
+        </div>
+        <div class="col-md-6 d-none d-md-block">
+          <form class="search-bar" role="search" action="pages/search.html">
+            <input class="form-control form-control-lg" type="search" name="q"
+              placeholder="Search products, categories, brands..." aria-label="Search products">
+            <button class="btn bg-pandayan text-white" type="submit" aria-label="Search"><i
+                class="bi bi-search"></i></button>
+          </form>
+        </div>
+        <div class="col-md-3 col-6 text-end d-flex justify-content-end gap-2">
+          <a href="pages/cart.html" class="header-icon" aria-label="Cart">
+            <i class="bi bi-cart3 fs-5"></i>
+            <span class="badge rounded-pill bg-warning text-dark" id="cart-badge">0</span>
+          </a>
+          <a href="pages/profile.html" class="header-icon" aria-label="Account"><i class="bi bi-person-circle fs-5"></i></a>
+        </div>
+      </div>
+    </div>
+    <nav class="secondary-nav" aria-label="Main navigation">
+      <div class="container">
+        <ul class="navbar-nav flex-row gap-1">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="pages/categories.html">Categories</a></li>
+          <li class="nav-item"><a class="nav-link" href="pages/locator.html">Store Locator</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dashboard
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="pages/dashboard.html"><i class="bi bi-speedometer2"></i> Dashboard</a></li>
+              <li><a class="dropdown-item" href="pages/order-history.html"><i class="bi bi-bag-check"></i> Order History</a>
+              </li>
+              <li><a class="dropdown-item" href="pages/saved-items.html"><i class="bi bi-heart"></i> Saved Items</a></li>
+              <li><a class="dropdown-item" href="pages/rewards.html"><i class="bi bi-gift"></i> Rewards</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item text-danger" href="pages/login.html"><i class="bi bi-box-arrow-right"></i>
+                  Logout</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="pages/bulk-orders.html">Bulk Orders</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container my-4">
+
+    <!-- Mobile Search -->
+    <div class="d-md-none mb-3">
+      <form class="search-bar" role="search" action="pages/search.html">
+        <input class="form-control" type="search" name="q" placeholder="Search products..." aria-label="Search">
+        <button class="btn bg-pandayan text-white" type="submit" aria-label="Search"><i
+            class="bi bi-search"></i></button>
+      </form>
+    </div>
+
+    <!-- Hero Banner -->
+    <section class="mb-4" aria-label="Promotional banner">
+      <div class="hero-banner text-white text-center shadow">
+        <p class="text-uppercase fw-semibold opacity-75 mb-1 small">Special Offer</p>
+        <h1 class="display-4 fw-bold mb-2">Balik Eskwela</h1>
+        <p class="lead mb-1">Up to <strong>40% OFF</strong> on all School Supplies</p>
+        <p class="opacity-75 mb-4">Notebooks, Writing Pads &amp; Stationery</p>
+        <a href="pages/categories.html" class="btn btn-pandayan-gold btn-lg px-5">Shop Now</a>
+      </div>
+    </section>
+
+    <!-- Promo Pill -->
+    <div class="mb-3">
+      <a href="pages/categories.html" class="promo-pill text-decoration-none">
+        <i class="bi bi-tag-fill"></i> Featured Promo — Back-to-School Deals <i class="bi bi-chevron-right"></i>
+      </a>
+    </div>
+
+    <!-- Audience Tabs -->
+    <section class="mb-3" aria-label="Shop by audience">
+      <div class="audience-tabs" role="tablist">
+        <button class="audience-tab active" role="tab" aria-selected="true"
+          onclick="filterProducts('all',this)">All</button>
+        <button class="audience-tab" role="tab" aria-selected="false"
+          onclick="filterProducts('students',this)">Students</button>
+        <button class="audience-tab" role="tab" aria-selected="false"
+          onclick="filterProducts('teachers',this)">Teachers</button>
+        <button class="audience-tab" role="tab" aria-selected="false"
+          onclick="filterProducts('offices',this)">Offices</button>
+      </div>
+    </section>
+
+    <!-- Shop by Category -->
+    <section class="mb-5">
+      <h2 class="section-title">Browse by Category</h2>
+      <div class="row g-3">
+        <div class="col-6 col-md-4 col-lg-2">
+          <a href="#" onclick="filterByCategory('school', event)" class="category-card" aria-label="School Supplies"
+            data-bs-toggle="tooltip" title="Notebooks, folders, paper">
+            <i class="bi bi-backpack category-icon"></i><span class="fw-semibold small">School Supplies</span>
+          </a>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <a href="#" onclick="filterByCategory('writing', event)" class="category-card" aria-label="Writing"
+            data-bs-toggle="tooltip" title="Pens, pencils, markers">
+            <i class="bi bi-pen category-icon"></i><span class="fw-semibold small">Writing</span>
+          </a>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <a href="#" onclick="filterByCategory('art', event)" class="category-card" aria-label="Art Supplies"
+            data-bs-toggle="tooltip" title="Paints, brushes, canvases">
+            <i class="bi bi-palette category-icon"></i><span class="fw-semibold small">Art Supplies</span>
+          </a>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <a href="#" onclick="filterByCategory('office', event)" class="category-card" aria-label="Office Supplies"
+            data-bs-toggle="tooltip" title="Staplers, binders, envelopes">
+            <i class="bi bi-building category-icon"></i><span class="fw-semibold small">Office Supplies</span>
+          </a>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <a href="#" onclick="filterByCategory('books', event)" class="category-card" aria-label="Books"
+            data-bs-toggle="tooltip" title="Textbooks, fiction, reference">
+            <i class="bi bi-book category-icon"></i><span class="fw-semibold small">Books &amp; Reading</span>
+          </a>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <a href="#" onclick="filterByCategory('kids', event)" class="category-card" aria-label="Kids"
+            data-bs-toggle="tooltip" title="Educational toys for kids">
+            <i class="bi bi-stars category-icon"></i><span class="fw-semibold small">Kids Toys</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="mb-5" id="featured">
+      <h2 class="section-title">Featured Products</h2>
+      <div class="row g-4" id="products-grid">
+
+        <div class="col-6 col-md-4 col-lg-3 product-item" data-audience="students">
+          <a href="product.html" class="text-decoration-none">
+            <div class="card product-card h-100 p-3">
+              <img src="images/sakura_watercolor.png" class="card-img-top mb-3" alt="Sakura Watercolor Set 12 Colors">
+              <div class="card-body p-0 d-flex flex-column">
+                <h3 class="h6 card-title text-dark">Sakura Watercolor Set</h3>
+                <p class="stock-badge mb-1"><i class="bi bi-check-circle-fill me-1"></i>In Stock</p>
+                <p class="product-price mt-auto mb-3">₱ 350.00</p>
+                <button class="btn btn-pandayan w-100" onclick="event.preventDefault();addToCart(event)"><i
+                    class="bi bi-cart-plus"></i> Add to Cart</button>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3 product-item" data-audience="students">
+          <a href="product.html" class="text-decoration-none">
+            <div class="card product-card h-100 p-3">
+              <img src="images/pentel_watercolor.png" class="card-img-top mb-3" alt="Pentel Watercolor Set">
+              <div class="card-body p-0 d-flex flex-column">
+                <h3 class="h6 card-title text-dark">Pentel Watercolor</h3>
+                <p class="stock-badge mb-1"><i class="bi bi-check-circle-fill me-1"></i>In Stock</p>
+                <p class="product-price mt-auto mb-3">₱ 280.00</p>
+                <button class="btn btn-pandayan w-100" onclick="event.preventDefault();addToCart(event)"><i
+                    class="bi bi-cart-plus"></i> Add to Cart</button>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3 product-item" data-audience="students">
+          <a href="product.html" class="text-decoration-none">
+            <div class="card product-card h-100 p-3">
+              <img src="images/faber_castell.png" class="card-img-top mb-3" alt="Faber-Castell Color Pencils">
+              <div class="card-body p-0 d-flex flex-column">
+                <h3 class="h6 card-title text-dark">Faber-Castell Set</h3>
+                <p class="stock-badge mb-1"><i class="bi bi-check-circle-fill me-1"></i>In Stock</p>
+                <p class="product-price mt-auto mb-3">₱ 450.00</p>
+                <button class="btn btn-pandayan w-100" onclick="event.preventDefault();addToCart(event)"><i
+                    class="bi bi-cart-plus"></i> Add to Cart</button>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3 product-item" data-audience="offices">
+          <a href="product.html" class="text-decoration-none">
+            <div class="card product-card h-100 p-3">
+              <img src="images/acrylic_paint.png" class="card-img-top mb-3" alt="Acrylic Paint Set">
+              <div class="card-body p-0 d-flex flex-column">
+                <h3 class="h6 card-title text-dark">Acrylic Paint Set</h3>
+                <p class="stock-badge mb-1"><i class="bi bi-check-circle-fill me-1"></i>In Stock</p>
+                <p class="product-price mt-auto mb-3">₱ 500.00</p>
+                <button class="btn btn-pandayan w-100" onclick="event.preventDefault();addToCart(event)"><i
+                    class="bi bi-cart-plus"></i> Add to Cart</button>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3 product-item" data-audience="teachers">
+          <a href="product.html" class="text-decoration-none">
+            <div class="card product-card h-100 p-3">
+              <img src="images/intermediate_pad.png" class="card-img-top mb-3" alt="Intermediate Writing Pad">
+              <div class="card-body p-0 d-flex flex-column">
+                <h3 class="h6 card-title text-dark">Intermediate Pad</h3>
+                <p class="stock-badge mb-1"><i class="bi bi-check-circle-fill me-1"></i>In Stock</p>
+                <p class="product-price mt-auto mb-3">₱ 45.00</p>
+                <button class="btn btn-pandayan w-100" onclick="event.preventDefault();addToCart(event)"><i
+                    class="bi bi-cart-plus"></i> Add to Cart</button>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3 product-item" data-audience="students">
+          <a href="product.html" class="text-decoration-none">
+            <div class="card product-card h-100 p-3">
+              <img src="images/composition_notebook.png" class="card-img-top mb-3" alt="Composition Notebook">
+              <div class="card-body p-0 d-flex flex-column">
+                <h3 class="h6 card-title text-dark">Composition Notebook</h3>
+                <p class="stock-badge mb-1"><i class="bi bi-check-circle-fill me-1"></i>In Stock</p>
+                <p class="product-price mt-auto mb-3">₱ 65.00</p>
+                <button class="btn btn-pandayan w-100" onclick="event.preventDefault();addToCart(event)"><i
+                    class="bi bi-cart-plus"></i> Add to Cart</button>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3 product-item" data-audience="offices">
+          <a href="product.html" class="text-decoration-none">
+            <div class="card product-card h-100 p-3">
+              <img src="images/mongol_pencil.png" class="card-img-top mb-3" alt="Drawing Pencil Set">
+              <div class="card-body p-0 d-flex flex-column">
+                <h3 class="h6 card-title text-dark">Drawing Pencil Set</h3>
+                <p class="stock-badge mb-1"><i class="bi bi-check-circle-fill me-1"></i>In Stock</p>
+                <p class="product-price mt-auto mb-3">₱ 120.00</p>
+                <button class="btn btn-pandayan w-100" onclick="event.preventDefault();addToCart(event)"><i
+                    class="bi bi-cart-plus"></i> Add to Cart</button>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3 product-item" data-audience="teachers">
+          <a href="product.html" class="text-decoration-none">
+            <div class="card product-card h-100 p-3">
+              <img src="images/eraser_set.png" class="card-img-top mb-3" alt="Eraser Set 10 Pieces">
+              <div class="card-body p-0 d-flex flex-column">
+                <h3 class="h6 card-title text-dark">Eraser 10pcs / Set</h3>
+                <p class="stock-badge mb-1"><i class="bi bi-check-circle-fill me-1"></i>In Stock</p>
+                <p class="product-price mt-auto mb-3">₱ 80.00</p>
+                <button class="btn btn-pandayan w-100" onclick="event.preventDefault();addToCart(event)"><i
+                    class="bi bi-cart-plus"></i> Add to Cart</button>
+              </div>
+            </div>
+          </a>
+        </div>
+
+      </div>
+      <div class="text-center mt-4">
+        <a href="pages/categories.html" class="btn btn-pandayan-outline px-5">View All Products</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <h6><i class="bi bi-book-half me-2"></i>Pandaday Bookshop</h6>
+          <p class="small">Your trusted partner for quality school supplies, books, and art materials since 1989.</p>
+        </div>
+        <div class="col-md-4">
+          <h6>Quick Links</h6>
+          <ul class="list-unstyled small">
+            <li class="mb-2"><a href="pages/categories.html">Categories</a></li>
+            <li class="mb-2"><a href="pages/locator.html">Store Locator</a></li>
+            <li class="mb-2"><a href="pages/dashboard.html">Dashboard</a></li>
+            <li class="mb-2"><a href="pages/bulk-orders.html">Bulk Orders</a></li>
+            <li class="mb-2"><a href="pages/help.html">Help &amp; Support</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h6>Contact</h6>
+          <p class="small mb-1"><i class="bi bi-telephone me-2"></i>(054) 871-0909</p>
+          <p class="small"><i class="bi bi-envelope me-2"></i>info@pandaday.com.ph</p>
+        </div>
+      </div>
+      <hr class="border-secondary mt-4">
+      <p class="text-center small mb-0 opacity-50">&copy; 2026 Pandaday Bookshop. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Mobile Bottom Nav -->
+  <nav class="bottom-nav" aria-label="Mobile navigation">
+    <a href="index.html" class="bottom-nav-item active"><i class="bi bi-house-fill"></i>Home</a>
+    <a href="pages/categories.html" class="bottom-nav-item"><i class="bi bi-grid"></i>Categories</a>
+    <a href="pages/search.html" class="bottom-nav-item"><i class="bi bi-search"></i>Search</a>
+    <a href="pages/dashboard.html" class="bottom-nav-item"><i class="bi bi-person"></i>Account</a>
+  </nav>
+
+  <!-- Help Button + Modal -->
+  <button id="help-btn" data-bs-toggle="modal" data-bs-target="#helpModal" aria-label="Open Help"><i
+      class="bi bi-question-circle me-2"></i>Help</button>
+  <div class="modal fade" id="helpModal" tabindex="-1" aria-labelledby="helpModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-pandayan">
+          <h5 class="modal-title text-white" id="helpModalLabel"><i class="bi bi-headset me-2"></i>Pandaday Support</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="list-group list-group-flush">
+            <a href="pages/dashboard.html" class="list-group-item list-group-item-action py-3"><i
+                class="bi bi-box-seam me-2 text-pandayan"></i>Track my order</a>
+            <a href="pages/cart.html" class="list-group-item list-group-item-action py-3"><i
+                class="bi bi-arrow-return-left me-2 text-pandayan"></i>Returns &amp; Refunds</a>
+            <a href="pages/locator.html" class="list-group-item list-group-item-action py-3"><i
+                class="bi bi-shop me-2 text-pandayan"></i>Find a Store</a>
+            <a href="pages/help.html" class="list-group-item list-group-item-action py-3"><i
+                class="bi bi-question-circle me-2 text-pandayan"></i>FAQs</a>
+          </div>
+          <div class="mt-4 text-center">
+            <p class="text-muted small mb-2">Still need help?</p>
+            <a href="tel:0548710909" class="btn btn-pandayan-outline w-100"><i class="bi bi-telephone me-2"></i>Call
+              (054) 871-0909</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script>
+    document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => new bootstrap.Tooltip(el));
+    function filterProducts(audience, btn) {
+      document.querySelectorAll('.audience-tab').forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
+      btn.classList.add('active'); btn.setAttribute('aria-selected', 'true');
+      // If not using dynamic products rendering:
+      // document.querySelectorAll('.product-item').forEach(item => {
+      //   item.style.display = (audience === 'all' || item.dataset.audience === audience) ? '' : 'none';
+      // });
+
+      // Instead we map audience to our app.js render logic:
+      if (audience === 'all') {
+        renderProducts(products);
+      } else {
+        const filtered = products.filter(p => p.audience === audience);
+        renderProducts(filtered);
+      }
+    }
+  </script>
+</body>
+
+</html>

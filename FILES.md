@@ -1,0 +1,71 @@
+# Available files
+
+- `.gitignore`
+- `DATA.md`
+- `README.md`
+- `VALIDATION.md`
+- `Webpage/Design-Rules of PANDAYAN.pdf`
+- `Webpage/Design-Thinking.pdf`
+- `Webpage/MOCK UP - AMC PB.png`
+- `Webpage/Mock-Up Design Project-GUIDELINES.pdf`
+- `Webpage/MockUp Close Up/Card Mem Feauture.png`
+- `Webpage/MockUp Close Up/Main Nav.png`
+- `Webpage/MockUp Close Up/Other Add.Features.png`
+- `Webpage/MockUp Close Up/Pro_Shop_Det.png`
+- `Webpage/USER FLOW Website - AMC PB.png`
+- `Webpage/UniversalDesign.pdf`
+- `Webpage/User Flow Close-Up/1.png`
+- `Webpage/User Flow Close-Up/2.png`
+- `Webpage/User Flow Close-Up/3.png`
+- `Webpage/User Flow Close-Up/4.png`
+- `Webpage/User Flow Close-Up/5.png`
+- `Webpage/User Flow Close-Up/6.png`
+- `Webpage/User Flow Close-Up/7.png`
+- `Webpage/User Flow Close-Up/8.png`
+- `Webpage/UserSupport_LearningTask.pdf`
+- `assets/css/styles.css`
+- `assets/images/acrylic_paint.png`
+- `assets/images/ballpen_set.png`
+- `assets/images/bond_paper.png`
+- `assets/images/brush_pen_set.png`
+- `assets/images/canvas_board.png`
+- `assets/images/composition_notebook.png`
+- `assets/images/eraser_set.png`
+- `assets/images/expanding_envelope.png`
+- `assets/images/faber_castell.png`
+- `assets/images/gel_pen.png`
+- `assets/images/highlighters.png`
+- `assets/images/intermediate_pad.png`
+- `assets/images/mongol_pencil.png`
+- `assets/images/pentel_watercolor.png`
+- `assets/images/plastic_envelope.png`
+- `assets/images/sakura_watercolor.png`
+- `assets/images/spiral_notebook.png`
+- `assets/images/sticky_notes.png`
+- `assets/images/watercolor_set.png`
+- `assets/images/whiteboard_markers.png`
+- `assets/images/yellow_pad.png`
+- `assets/js/app.js`
+- `index.html`
+- `pages/addresses.html`
+- `pages/bulk-orders.html`
+- `pages/cart.html`
+- `pages/categories.html`
+- `pages/checkout/checkout-guest.html`
+- `pages/checkout/checkout.html`
+- `pages/checkout/confirmation.html`
+- `pages/checkout/delivery.html`
+- `pages/checkout/payment.html`
+- `pages/checkout/receipt.html`
+- `pages/dashboard.html`
+- `pages/help.html`
+- `pages/locator.html`
+- `pages/login.html`
+- `pages/notifications.html`
+- `pages/order-history.html`
+- `pages/order-tracking.html`
+- `pages/product.html`
+- `pages/profile.html`
+- `pages/rewards.html`
+- `pages/saved-items.html`
+- `pages/search.html`
